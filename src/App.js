@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Person from './Person/Person';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const app = () => {
+
+  const [personState, setPersonState] = useState({
+
+    personItems: [{name: "Amol", mobile: 7058215810}, 
+    {name: "Ujwala", mobile: 7875215810}, 
+    {name: "Shreya", mobile: 7058215810}, 
+    {name: "Amol", mobile: 7058215810}]            
+});
+
+const onClickedSwitchButton = () => {
+  setPersonState({
+    personItems: [{name: "Amol Chaudhari", mobile: 7058215810}, 
+    {name: "Ujwala Chaudhari", mobile: 7875215810}, 
+    {name: "Shreya Chaudhari", mobile: 7058215810}, 
+    {name: "Amol Chaudhari", mobile: 7058215810}]            
+});
 }
 
-export default App;
+const onChangeName
+
+  return (
+        <div>
+          <h1> Amol Chaudhari </h1>
+          <p> {personState.personItems[0].name}</p>
+          <button onClick={onClickedSwitchButton}>click me</button>
+          
+          <Person name={personState.personItems[0].name} age={personState.personItems[0].mobile} changed={}/>
+          <Person name={personState.personItems[1].name} age={personState.personItems[1].mobile} on/>
+          <Person name={personState.personItems[2].name} age={personState.personItems[2].mobile} />
+        </div>
+    );
+
+  }
+
+export default app;
